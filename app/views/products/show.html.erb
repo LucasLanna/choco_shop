@@ -1,0 +1,8 @@
+<h2><%= @product.name %></h2>
+<p><%= @restaurant.stock %></p>
+<p><%= @restaurant.price %></p>
+
+<%= link_to "Delete",
+  product_path(@restaurant),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
