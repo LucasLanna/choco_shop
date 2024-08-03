@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @order = Order.new
   end
 
   def new
@@ -27,9 +28,11 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+
     if @product.update(product_params)
       redirect_to product_path(@product)
     else
+      p @product.errors.full_messages
       render :edit
     end
   end
