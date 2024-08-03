@@ -10,3 +10,8 @@
 
 <%= link_to "Edit",
   edit_product_path(@product) %>
+
+<%= simple_form_for [@product, @order] do |f| %>
+  <%= f.input :quantity, as: :numeric, input_html: { min: 1, max: @product.stock } %>
+  <%= f.submit %>
+<% end %>
