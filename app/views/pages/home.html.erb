@@ -1,3 +1,15 @@
-<h1>Chocolates</h1>
-<p>Check all of our options:</p>
-<%= link_to "chocolates", products_path %>
+<div class="container">
+  <h1>Chocolates</h1>
+  <p>Check all of our options:</p>
+  <div>
+    <ul>
+      <% @products.each do |product| %>
+        <li><%= product.name%></li>
+        <li><%= product.description%></li>
+        <li><%= product.price%></li>
+      <% end %>
+    </ul>
+
+  </div>
+  <%= link_to "chocolates", products_path %>
+</div>
