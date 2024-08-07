@@ -1,8 +1,11 @@
-
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
+<% if @products.present? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% else %>
+<h1> We've no products yet </h1>
+<% end %>
 
 <%= link_to "cadastrar chocolate", new_product_path %>
