@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @products = Product.all
+    @products = Product.take(3)
   end
 end
