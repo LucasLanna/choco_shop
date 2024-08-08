@@ -5,24 +5,21 @@
     <%= link_to "Shop Now", products_path, class: "btn btn-flat" %>
   </div>
 </div>
-<div class="container">
+<div class="container mt-4 mb-4">
   <h1>Most Popular Choices</h1>
-  <div>
-    <div class="card-product">
-      <img src="https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png" />
-      <div class="card-product-infos">
-    <h2>product.name</h2>
-    <p>product.description</p>
+  <div class="d-flex">
+    <% @products.each do |product| %>
+      <div class="card-product w-50 h-75 mt-5 mb-5">
+        <img src="https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png" />
+        <div class="card-product-infos">
+          <ul>
+            <li><%= product.name%></li>
+            <li><%= product.price%></li>
+          </ul>
+          <p><%= product.description%></p>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
-  </div>
-    <ul>
-      <% @products.each do |product| %>
-        <li><%= product.name%></li>
-        <li><%= product.description%></li>
-        <li><%= product.price%></li>
-      <% end %>
-    </ul>
-
   <%= link_to "View All Chocolates", products_path, class: "btn btn-flat" %>
 </div>
