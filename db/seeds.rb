@@ -12,7 +12,11 @@ puts "cleaning up database"
 Product.destroy_all
 puts "database cleaned"
 
-Product.create(name: "Guylian", description: "Belgian Chocolate",price: 8.5, stock: 10)
+user = User.new(email: "user@emial.com", encrypted_password: "123456", password: "123456")
+user.save!
+new = Product.new(name: "Guylian", description: "Belgian Chocolate", price: 8.5, stock: 10, user_id: user.id)
+new.save!
+Product.create(name: "Guylian", description: "Belgian Chocolate", price: 8.5, stock: 10)
 Product.create(name: "Lindt", description: "Swiss Chocolate", price: 7.5, stock: 8)
 Product.create(name: "Baci", description: "Italian Chocolate", price: 3.5, stock: 12)
 Product.create(name: "Tony's", description: "American Chocolate", price: 5.5, stock: 9)
