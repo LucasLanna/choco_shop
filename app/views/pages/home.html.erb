@@ -6,9 +6,16 @@
   </div>
 </div>
 <div class="container">
-  <h1>Chocolates</h1>
-  <p>Check all of our options:</p>
+  <h1>Most Popular Choices</h1>
   <div>
+    <div class="card-product">
+      <img src="https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png" />
+      <div class="card-product-infos">
+    <h2>product.name</h2>
+    <p>product.description</p>
+  </div>
+</div>
+  </div>
     <ul>
       <% @products.each do |product| %>
         <li><%= product.name%></li>
@@ -17,6 +24,5 @@
       <% end %>
     </ul>
 
-  </div>
-  <%= link_to "chocolates", products_path %>
+  <%= link_to "View All Chocolates", products_path, class: "btn btn-flat" %>
 </div>
