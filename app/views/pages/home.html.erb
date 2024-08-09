@@ -42,7 +42,11 @@
   <div class="d-flex">
     <% @products.each do |product| %>
       <div class="card-product w-50 h-75 mt-5 mb-5">
-        <img src="https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png" />
+        <% if product.photo.attached? %>
+              <%= cl_image_tag product.photo.key, alt: "product" %>
+            <% else  %>
+              <%= image_tag "https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png", alt: "product" %>
+            <% end %>
         <div class="card-product-infos">
           <ul>
             <li><%= product.name%></li>
