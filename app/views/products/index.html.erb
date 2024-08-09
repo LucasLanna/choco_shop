@@ -1,11 +1,18 @@
-<% if @products.present? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %>
-<h1> We've no products yet </h1>
-<% end %>
+<div class="container">
+  <% if @products.present? %>
+    <div class="grid my-3">
+      <% @products.each do |product| %>
+        <div class="card">
+          <%= image_tag product.photos.first, width: 350 %>
+          <div class="card-body">
+            <%= link_to product.name, product_path(product) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+  <h1> We've no products yet </h1>
+  <% end %>
 
-<%= link_to "cadastrar chocolate", new_product_path %>
+  <%= link_to "cadastrar chocolate", new_product_path, class: "btn btn-primary pt-80" %>
+</div>
