@@ -1,7 +1,11 @@
 <% if @products.present? %>
-  <ul>
+  <ul class="d-flex ul_card">
     <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
+      <div class="container card_products">
+        <img class="img_card" src="https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png" />
+        <li><%= link_to product.name, product_path(product) %></li>
+        <li><%= product.price%></li>
+      </div>
     <% end %>
   </ul>
 <% else %>
