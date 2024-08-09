@@ -2,14 +2,22 @@
   <ul class="d-flex ul_card">
     <% @products.each do |product| %>
       <div class="container card_products">
-        <img class="img_card" src="https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png" />
-        <li><%= link_to product.name, product_path(product) %></li>
-        <li><%= product.price%></li>
+        <div class="img_card_container">
+          <%= link_to product_path(product) do %>
+            <%= image_tag "mockup4.png", class: 'img_card' %>
+          <% end %>
+        </div>
+        <div class="product_details">
+          <h2 class="product_name"><%= link_to product.name, product_path(product) %></h2>
+          <p class="product_description"><%= product.description %></p>
+          <p class="product_price"><%= number_to_currency(product.price) %></p>
+          <%= link_to "Know More", product_path(product), class: 'know_more_button' %>
+        </div>
       </div>
     <% end %>
   </ul>
 <% else %>
-<h1> We've no products yet </h1>
+  <h1>No products available yet</h1>
 <% end %>
 
-<%= link_to "cadastrar chocolate", new_product_path %>
+<%= link_to "Add New Chocolate", new_product_path, class: 'add_product_button' %>
