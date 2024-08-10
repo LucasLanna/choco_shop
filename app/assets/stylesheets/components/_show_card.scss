@@ -1,13 +1,8 @@
-/* Gradient background for the page */
-body {
-  background: linear-gradient(to bottom right, #e6b98a, #8b4513);
-  font-family: 'Poppins', sans-serif; /* Nice modern font */
-  color: #402722; /* Soft brown for text */
-}
-
 /* Styling the card */
 .card_show {
   background: #ffffff;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   width: 80%;
@@ -20,52 +15,64 @@ body {
 }
 
 /* Image container */
-.img_card_container {
+.img_card_container_show {
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.img_card {
-  width: 100%;
+.img_card_show {
+  max-width: 90%;
+  margin-right: 5%;
   height: auto;
-  max-height: 300px;
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.img_card:hover {
-  transform: scale(1.05);
+.container-img-details {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content_show {
+  width: 100%;
+}
+
+.img_card_show:hover {
+  transform: scale(1.5);
+  z-index: 5000;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Product details */
-.product_details {
-  text-align: center;
+.product_details_show {
+  width: 100%;
 }
 
-.product_name {
+.product_name_show {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.product_description {
+.product_description_show {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
 
-.product_price, .product_stock, .product_seller {
+.product_price_show, .product_stock_show, .product_seller_show {
   font-size: 1em;
   margin-bottom: 5px;
 }
 
 /* Actions */
-.product-actions {
+.product-actions_show {
   margin-top: 20px;
 }
 
-.order-form {
+.order-form_show {
   margin-top: 20px;
 }

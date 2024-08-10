@@ -38,23 +38,26 @@
   </button>
 </div>
 <div class="container mt-4 mb-4">
-  <h1>Most Popular Choices</h1>
-  <div class="d-flex">
+  <h1 class="title_home">Most Popular Choices</h1>
+  <div class="d-flex justify-content-between mb-3">
     <% @products.each do |product| %>
-      <div class="card-product w-50 h-75 mt-5 mb-5">
-        <% if product.photo.attached? %>
-              <%= cl_image_tag product.photo.key, alt: "product" %>
+        <%= link_to product_path(product), class:"content_link" do %>
+        <div class="container card_products">
+          <div class="img_card_container">
+          <% if product.photo.attached? %>
+              <%= cl_image_tag product.photo.key, class: "img_card", alt: "product_photo" %>
             <% else  %>
-              <%= image_tag "https://res.cloudinary.com/dsoletyk5/image/upload/v1723071230/225732-800-800_v4zfoy.png", alt: "product" %>
+              <%= image_tag "no_pic.png", class: 'img_card' %>
             <% end %>
-        <div class="card-product-infos">
-          <ul>
-            <li><%= product.name%></li>
-            <li><%= product.price%></li>
-          </ul>
-          <p><%= product.description%></p>
+          </div>
+          <div class="product_details">
+            <h2 class="product_name"><%= product.name %></h2>
+            <p class="product_description"><%= product.description %></p>
+            <p class="product_price"><%= number_to_currency(product.price) %></p>
+            <%= link_to "Know More", product_path(product), class: 'know_more_button' %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
   <%= link_to "View All Chocolates", products_path, class: "btn btn-flat" %>
