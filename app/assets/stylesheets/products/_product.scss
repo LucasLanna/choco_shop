@@ -9,39 +9,55 @@
   margin: 5px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Ensures the image's hover effect is within the card boundary */
-  overflow: hidden; /* Hides any overflow from the enlarged image */
+  position: relative;
+  overflow: hidden;
+  align-items: center; /* test */
+  justify-content: space-between; /* test */
 }
 
 .img_card_container {
   width: 100%;
   text-align: center;
   margin-bottom: 15px;
+  justify-content: center; /* test */
 }
 
 .img_card {
-  width: 150px;
+  width: 100%;
   height: auto;
   display: inline-block;
   border-radius: 8px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Use transform for scaling */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  max-height: 150px; /* test */
+  object-fit: cover;
 }
 
 .img_card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transform: scale(1.1); /* Slightly enlarge the image */
+  transform: scale(1.1);
 }
 
 .product_details {
   width: 100%;
   margin-left: 11px;
+  margin-top: auto; /* test */
+}
+
+.content_link{
+  text-decoration: none;
 }
 
 .product_name {
-  font-size: 1.5em;
+  font-size: 1.2em;
+  overflow: hidden;
   color: #402722;
+  font-weight: bold;
+  text-align: center;
   text-decoration: none;
   transition: color 0.3s ease, text-decoration 0.3s ease;
+  text-align: left; /* test */
+  text-overflow: ellipsis; /* test */
+  white-space: nowrap; /* test */
 }
 
 .product_name a {
@@ -62,6 +78,10 @@
 .product_description {
   color: #402722;
   margin-bottom: 10px;
+  overflow: hidden; /* test */
+  max-width: 30ch; /* test */
+  text-overflow: ellipsis; /* test */
+  white-space: nowrap; /* test */
 }
 
 .know_more_button {
