@@ -1,6 +1,6 @@
 
 .login {
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dsoletyk5/image/upload/v1722912793/destaque_chocolates_novos_zona_sul_guerin_y88cal.jpg);
+  background-image: linear-gradient(rgba(254, 251, 251, 0.66),rgba(138, 66, 19,0.4));
   width: 100%;
   padding-top: 20px;
   height: calc(100vh-98px);
@@ -11,14 +11,15 @@
 }
 
 .content{
-  color: white;
+  background-color: #53280a;
   width: 35%;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+  padding: 15px;
 }
 
 .devise_title{
-  color: #fffdfb;
   margin: 0;
 }
 
@@ -29,4 +30,9 @@
 .signup-btn {
   margin-top: 20px;
   width: 100%;
+}
+
+.link-forgot {
+ text-decoration: none;
+ color: white;
 }
