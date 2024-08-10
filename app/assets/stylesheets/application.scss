@@ -12,3 +12,9 @@
 @import "pages/index";
 
 @import "products/index";
+@import "devise/devise";
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
