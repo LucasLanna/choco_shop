@@ -1,14 +1,17 @@
+require "open-uri"
+
 if Rails.env.development?
   puts "Cleaning up database"
   User.destroy_all
   Product.destroy_all
   puts "Database cleaned"
 
+  products = []
   admin = User.create!(email: "admin@chocoshop.com", password: ENV["ADMIN_PASSWORD"])
-  Product.create!(name: "Guylian", description: "Belgian Chocolate",price: 8.5, stock: 10, user: admin)
-  Product.create!(name: "Lindt", description: "Swiss Chocolate", price: 7.5, stock: 8, user: admin)
-  Product.create!(name: "Baci", description: "Italian Chocolate", price: 3.5, stock: 12, user: admin)
-  Product.create!(name: "Tony's", description: "American Chocolate", price: 5.5, stock: 9, user: admin)
+  products << Product.create!(name: "Guylian", description: "Belgian Chocolate",price: 8.5, stock: 10, user: admin)
+  products << Product.create!(name: "Lindt", description: "Swiss Chocolate", price: 7.5, stock: 8, user: admin)
+  products << Product.create!(name: "Baci", description: "Italian Chocolate", price: 3.5, stock: 12, user: admin)
+  products << Product.create!(name: "Tony's", description: "American Chocolate", price: 5.5, stock: 9, user: admin)
 
   chocolates = [{ name: "Novi", description: "Italian Chocolate", price: 4.5, stock: 7 },
   { name: "Godiva", description: "Belgian Chocolate", price: 9.0, stock: 6 },
@@ -49,7 +52,16 @@ if Rails.env.development?
 
   chocolates.each do |chocolate|
     chocolate[:user] = admin
-    Product.create!(chocolate)
+    products << Product.create!(chocolate)
+  end
+
+  # Passar por cada produto, pegar seu nome e baixar uma imagem especifica
+  products.each do |product|
+    # product_url = URI.open("https://picsum.photos/seed/picsum/200/300/?search=#{product.name.dowcase}")
+   # product_url = URI.open("https://picsum.photos/seed/picsum/200/300/")
+    product_url = URI.open("https://random.imagecdn.app/500/150")
+    product.photo.attach(io: product_url, filename: "#{product.name.downcase}.png", content_type: "image/png")
+    product.save!
   end
 
   puts "Products created"
