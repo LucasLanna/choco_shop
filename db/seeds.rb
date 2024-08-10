@@ -60,7 +60,7 @@ if Rails.env.development?
     # product_url = URI.open("https://picsum.photos/seed/picsum/200/300/?search=#{product.name.dowcase}")
    # product_url = URI.open("https://picsum.photos/seed/picsum/200/300/")
     product_url = URI.open("https://random.imagecdn.app/500/150")
-    product.photos.attach(io: product_url, filename: "#{product.name.downcase}.png", content_type: "image/png")
+    product.photo.attach(io: product_url, filename: "#{product.name.downcase}.png", content_type: "image/png")
     product.save!
   end
 
