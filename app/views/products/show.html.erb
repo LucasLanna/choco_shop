@@ -1,27 +1,30 @@
 <div class="card_show">
   <div class="content_show">
-    <div class="img_card_container_show">
-      <% if @product.photo.attached? %>
-        <%= cl_image_tag @product.photo.key, class: "img_card_show", alt: "product_photo" %>
-      <% else %>
-        <%= image_tag "no_pic.png", class: "img_card_show" %>
-      <% end %>
-    </div>
-
-    <div class="product_details_show">
-      <h2 class="product_name_show"><%= @product.name %></h2>
-      <p class="product_description_show"><%= @product.description %></p>
-      <p class="product_price_show">Price: <%= number_to_currency(@product.price) %></p>
-      <p class="product_stock_show">Stock: <%= @product.stock %></p>
-      <h3>Sold By:</h3>
-      <p class="product_seller_show"><%= @product.user.email %></p>
-
-      <div class="product-actions_show">
-        <%= link_to "Edit", edit_product_path(@product), class: "btn-flat" %>
-        <%= link_to "Delete", product_path(@product), class: "btn-flat",
-            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-            class: "btn-ghost" %>
+    <div class="container-img-details">
+      <div class="img_card_container_show">
+        <% if @product.photo.attached? %>
+          <%= cl_image_tag @product.photo.key, class: "img_card_show", alt: "product_photo" %>
+        <% else %>
+          <%= image_tag "no_pic.png", class: "img_card_show" %>
+        <% end %>
       </div>
+
+      <div class="product_details_show">
+        <h2 class="product_name_show"><%= @product.name %></h2>
+        <p class="product_description_show"><%= @product.description %></p>
+        <p class="product_price_show">Price: <%= number_to_currency(@product.price) %></p>
+        <p class="product_stock_show">Stock: <%= @product.stock %></p>
+        <h3>Sold By:</h3>
+        <p class="product_seller_show"><%= @product.user.email %></p>
+
+        <div class="product-actions_show">
+          <%= link_to "Edit", edit_product_path(@product), class: "btn-flat" %>
+          <%= link_to "Delete", product_path(@product),
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "btn-ghost btn-flat" %>
+        </div>
+      </div>
+    </div>
 
       <div class="order-form_show">
         <%= simple_form_for [@product, @order] do |f| %>

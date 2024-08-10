@@ -22,22 +22,34 @@
 }
 
 .img_card_show {
-  max-width: 100px;
+  max-width: 90%;
+  margin-right: 5%;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.container-img-details {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content_show {
+  width: 100%;
+}
+
 .img_card_show:hover {
-  transform: scale(3);
-  z-index: 1000;
+  transform: scale(1.5);
+  z-index: 5000;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Product details */
 .product_details_show {
-  text-align: center;
+  width: 100%;
 }
 
 .product_name_show {
