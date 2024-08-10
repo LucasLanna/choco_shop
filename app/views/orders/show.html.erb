@@ -1,4 +1,8 @@
-<h1>SHOW TESTE</h1>
+<div class="container">
+  <h1>Order created successfully!</h1>
 
-<%= @order.quantity %>
-<%= @order.date %>
+  <p><%= @order.quantity %> unit(s)</p>
+  <p>on <%= @order.date %></p>
+  <p> $<%= @order.product.price %></p>
+  <h2> Your product will arrive soon!</h2>
+</div>
