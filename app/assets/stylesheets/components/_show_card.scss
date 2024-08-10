@@ -1,0 +1,71 @@
+/* Gradient background for the page */
+body {
+  background: linear-gradient(to bottom right, #e6b98a, #8b4513);
+  font-family: 'Poppins', sans-serif; /* Nice modern font */
+  color: #402722; /* Soft brown for text */
+}
+
+/* Styling the card */
+.card_show {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Image container */
+.img_card_container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.img_card {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img_card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Product details */
+.product_details {
+  text-align: center;
+}
+
+.product_name {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product_description {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.product_price, .product_stock, .product_seller {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+/* Actions */
+.product-actions {
+  margin-top: 20px;
+}
+
+.order-form {
+  margin-top: 20px;
+}
