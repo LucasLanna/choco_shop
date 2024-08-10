@@ -1,10 +1,3 @@
-/* Gradient background for the page */
-body {
-  background: linear-gradient(to bottom right, #e6b98a, #8b4513);
-  font-family: 'Poppins', sans-serif; /* Nice modern font */
-  color: #402722; /* Soft brown for text */
-}
-
 /* Styling the card */
 .card_show {
   background: #ffffff;
@@ -20,13 +13,13 @@ body {
 }
 
 /* Image container */
-.img_card_container {
+.img_card_container_show {
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.img_card {
+.img_card_show {
   width: 100%;
   height: auto;
   max-height: 300px;

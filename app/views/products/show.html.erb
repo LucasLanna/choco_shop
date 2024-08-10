@@ -1,7 +1,7 @@
 <div class="card_show">
-  <div class="img_card_container">
+  <div class="img_card_container_show">
     <% if @product.photo.attached? %>
-      <%= cl_image_tag @product.photo.key, class: "img_card", alt: "product_photo" %>
+      <%= cl_image_tag @product.photo.key, class: "img_card_show", alt: "product_photo" %>
     <% else %>
       <%= image_tag "no_pick.png", class: "img_card" %>
     <% end %>
