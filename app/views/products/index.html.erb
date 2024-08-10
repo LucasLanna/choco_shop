@@ -7,7 +7,7 @@
           <% if product.photo.attached? %>
               <%= cl_image_tag product.photo.key, class: "img_card", alt: "product_photo" %>
             <% else  %>
-              <%= image_tag "mockup4.png", class: 'img_card' %>
+              <%= image_tag "no_pick.png", class: 'img_card' %>
             <% end %>
           </div>
           <div class="product_details">
