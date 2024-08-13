@@ -1,24 +1,26 @@
-
 .login {
   width: 100%;
-  padding-top: 20px;
-  height: calc(100vh-98px);
+  padding: 20px;
+  // height: calc(100vh - 98px); /* Corrected calc syntax */
   display: flex;
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.content{
+.content {
   background-color: #53280a;
-  width: 35%;
+  width: 100%;
+  max-width: 500px; /* Set a max width for larger mobile screens */
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
 }
 
-.devise_title{
+.devise_title {
   margin: 0;
 }
 
@@ -32,6 +34,42 @@
 }
 
 .link-forgot {
- text-decoration: none;
- color: white;
+  text-decoration: none;
+  color: white;
+}
+
+/* Mobile Adaptation */
+@media (max-width: 768px) {
+  .content {
+    width: 90%; /* Slightly reduce width to ensure padding doesn't make it too narrow */
+    padding: 15px; /* Reduce padding for mobile view */
+  }
+
+  .devise_title {
+    font-size: 1.5em; /* Adjust title size */
+    text-align: center; /* Center-align the title */
+  }
+
+  .form-inputs input {
+    font-size: 1em; /* Adjust input font size */
+    padding: 10px; /* Increase input padding for better touch support */
+  }
+
+  .signin {
+    width: 100%; /* Full width on mobile screens */
+    padding: 10px; /* Adjust button padding for mobile */
+    font-size: 1.2em; /* Adjust font size */
+    margin: 0 auto; /* Center the button */
+  }
+
+  .signup-btn {
+    margin-top: 20px;
+    width: 100%;
+    font-size: 1.2em; /* Adjust button font size */
+  }
+
+  .link-forgot {
+    font-size: 1em; /* Adjust font size for links */
+    text-align: center; /* Center-align the forgot password link */
+  }
 }
