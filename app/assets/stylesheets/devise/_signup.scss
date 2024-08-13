@@ -1,21 +1,26 @@
+.devise_title{
+  color: #fffdfb;
+  margin: 0;
+}
+
+.content_signup {
+  background-color: #53280a;
+  width: 100%;
+  max-width: 500px; /* Set a max width for larger mobile screens */
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
 .signup{
   width: 100%;
-  padding-top: 20px;
-  height: calc(100vh-98px);
+  padding: 20px;
+  // height: calc(100vh - 98px); /* Corrected calc syntax */
   display: flex;
   justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.content{
-  color: white;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-}
-
-.devise_title{
-  color: #fffdfb;
-  margin: 0;
 }

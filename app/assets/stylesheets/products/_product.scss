@@ -118,3 +118,31 @@
   padding: 20px;
   margin: 20px auto;
 }
+
+/* Mobile Adaptation */
+@media (max-width: 768px) {
+  .card_products {
+    width: 90%;
+    max-width: 100%;
+    margin: 10px auto;
+    flex-direction: column;
+  }
+
+  .img_card_container {
+    width: 100%;
+  }
+
+  .img_card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .product_details {
+/*     text-align: center; */
+  }
+
+  .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+}
