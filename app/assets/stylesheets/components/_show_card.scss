@@ -12,16 +12,14 @@
   align-items: center;
 }
 
-// /* Image container */
-// .img_card_container_show {
-//   width: 100%;
-//   text-align: center;
-//   margin-bottom: 20px;
-// }
+.img_card_container_show {
+  text-align: center;
+}
 
 .img_card_show {
+  display: inline-block;
   max-width: 90%;
-  margin-right: 5%;
+  margin: 20px;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
